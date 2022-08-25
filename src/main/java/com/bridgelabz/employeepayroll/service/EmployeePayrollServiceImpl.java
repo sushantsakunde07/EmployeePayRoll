@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class EmployeePayrollServiceImpl implements EmployeePayrollService{
+public class EmployeePayrollServiceImpl implements EmployeePayrollService {
 
     private List<Employee> employeeList = new ArrayList<>();
 
