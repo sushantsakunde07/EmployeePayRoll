@@ -21,7 +21,7 @@ public class EmployeePayRollAppController {
     public ResponseEntity<ResponseDTO> getEmployeePayrollData(){
         List<Employee> employeeList = null;
         employeeList = employeePayrollService.getEmployeeDetails();
-        ResponseDTO responseDto = new ResponseDTO("Get Call Sucess", employeeList);
+        ResponseDTO responseDto = new ResponseDTO("Get Call Success", employeeList);
         return new ResponseEntity<ResponseDTO>(responseDto, HttpStatus.OK);
     }
 
