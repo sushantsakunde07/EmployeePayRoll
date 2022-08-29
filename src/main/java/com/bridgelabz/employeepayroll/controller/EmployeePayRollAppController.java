@@ -1,9 +1,11 @@
 package com.bridgelabz.employeepayroll.controller;
 
+
 import com.bridgelabz.employeepayroll.dto.EmployeePayrollDTO;
 import com.bridgelabz.employeepayroll.dto.ResponseDTO;
 import com.bridgelabz.employeepayroll.entity.Employee;
 import com.bridgelabz.employeepayroll.service.EmployeePayrollService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +15,8 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping ("/employeepayrollservice")
+@RequestMapping("/employeepayrollservice")
+@Slf4j
 public class EmployeePayRollAppController {
     @Autowired
     private EmployeePayrollService employeePayrollService;
@@ -28,7 +31,7 @@ public class EmployeePayRollAppController {
     @GetMapping("/get/{empId}")
     public ResponseEntity<ResponseDTO> getEmployeePayrollData(@PathVariable("empId")int empId){
         Employee employee = employeePayrollService.getEmployeeDetailsById(empId);
-        ResponseDTO responseDTO = new ResponseDTO("Get Call For Id Sucessful", employee);
+        ResponseDTO responseDTO = new ResponseDTO("Get Call For Id Successful", employee);
         return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
     }
 
